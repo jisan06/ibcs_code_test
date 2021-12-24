@@ -13,7 +13,7 @@
                 <h2 class="subtitle">Information</h2>
                 <p class="is-size-6 has-text-grey">${{ product.price }}</p>
 
-                <div class="field has-addons mt-6">
+                <div class="field has-addons mt-6" v-if="product.quantity > 0">
                     <div class="control">
                         <input type="number" class="input" min="1" v-model="quantity">
                     </div>
@@ -21,6 +21,8 @@
                         <a class="button is-dark" @click="addToCart">Add to cart</a>
                     </div>
                 </div>
+
+              <div v-if="product.quantity < 1" style="color: red">Out of Stock</div>
             </div>
         </div>
     </div>

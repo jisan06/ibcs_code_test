@@ -106,16 +106,15 @@ export default {
     }
   },
   mounted() {
-    this.cartTotalLength();
       this.cart = this.$store.state.cart
   },
   computed: {
     cartTotalLength() {
-      alert('get')
       let totalLength = 0
       for (let i = 0; i < this.cart.items.length; i++) {
         totalLength += this.cart.items[i].quantity
       }
+
       return totalLength
     }
   },
