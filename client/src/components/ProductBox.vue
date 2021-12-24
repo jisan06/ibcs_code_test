@@ -2,7 +2,7 @@
     <div class="column is-3">
         <div class="box">
             <figure class="image mb-4">
-                <img :src=" 'http://localhost:8000/' + product.image">
+                <img :src=" 'http://localhost:8000/' + product.image" class="product_image">
             </figure>
 
             <h3 class="is-size-4">{{ product.product_name }}</h3>
@@ -28,6 +28,10 @@ export default {
     margin-top: -1.25rem;
     margin-left: -1.25rem;
     margin-right: -1.25rem;
+  }
+
+  .product_image{
+    max-height: 310px;
   }
 </style>
 

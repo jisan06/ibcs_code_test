@@ -3,7 +3,7 @@
         <div class="columns is-multiline">
             <div class="column is-9">
                 <figure class="image mb-6">
-                    <img :src=" 'http://localhost:8000/' + product.image" alt="">
+                    <img :src=" 'http://localhost:8000/' + product.image" alt="" class="product_image">
                 </figure>
                 <h3 class="is-size-4">{{ product.product_name }}</h3>
                 <p>{{ product.description }}</p>
@@ -79,4 +79,10 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+  .product_image{
+    max-width: 250px;
+  }
+</style>
 
