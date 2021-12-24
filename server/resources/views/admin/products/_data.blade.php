@@ -12,15 +12,15 @@
       <td>
          <div class="hidden-sm hidden-xs btn-group">
             <form>
-               @can('product-delete')
-                  <button class="btn btn-xs btn-danger delete_me" data-id="{{ $product->product_id }}">
-                     <i class="ace-icon fa fa-trash-o bigger-120"></i>
-                  </button>
-               @endcan
                @can('product-edit')
                    <a class="btn btn-warning btn-xs" title="Edit"
                       href="{{route('product.edit',$product->product_id)}}" data-id="{{ $product->product_id }}">
                        <i class="ace-icon fa fa-pencil bigger-120"></i></a>
+               @endcan
+               @can('product-delete')
+                   <button class="btn btn-xs btn-danger delete_me" data-id="{{ $product->product_id }}">
+                       <i class="ace-icon fa fa-trash-o bigger-120"></i>
+                   </button>
                @endcan
             </form>
          </div>

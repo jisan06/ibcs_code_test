@@ -181,6 +181,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\viewComposer::class,
         FruitCake\Cors\CorsServiceProvider::class,
+        Orangehill\Iseed\IseedServiceProvider::class,
 
     ],
 

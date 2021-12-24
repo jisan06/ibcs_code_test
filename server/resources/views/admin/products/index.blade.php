@@ -5,71 +5,22 @@
 @section('extra_css')
 @stop
 @section('content')
-
-   <!-- IF $index_categories IS SET, MEANS THIS IS WITHOUT TRASH ROUTE THEN WE SHOW SORTING -->
-   @if(isset($index_categories))
-      <div class="pull-left">
-         <form id="sort_form" action="{{ route('product.index.sort') }}" method="post">
-            @csrf
-            <div class="btn-group">
-               <select name="sort_category" id="sort_category" class="form-control">
-                  <option value="" disabled="" selected="">ORDER BY @lang('models/categories.singular'):</option>
-                  <option value="{{ null }}">ALL @lang('models/categories.plural'):</option>
-                  @foreach($index_categories as $category)
-                     <option value="{{ $category->category_slug }}">{{ $category->category_name }}</option>
-                  @endforeach
-               </select>
-            </div>
-
-            <div class="btn-group">
-               <select name="sort" id="sort" class="form-control">
-                  {{--            <option value="product_id" disabled="" selected="">SORT BY:</option>--}}
-                  <option value="product_id">Sort By Default</option>
-                  <option value="created_at">New Products</option>
-                  <option value="buy_price">Buy Price</option>
-                  <option value="price">Sale Price</option>
-               </select>
-            </div>
-
-            <div class="btn-group">
-               <select name="dcs" class="form-control">
-                  <option value="desc">High to lower</option>
-                  <option value="asc">Low to higher</option>
-               </select>
-            </div>
-
-            <div class="btn-group">
-               <label for="status">ONLY ACTIVE</label>
-               <input type="checkbox" name="status" id="status">
-            </div>
-
-            <button class=" btn btn-success btn-sm" type="submit">
-               FILTER
-            </button>
-
-         </form>
-         <a class="click_me btn btn-info2 btn-sm" href="{{ route('product.index.trash') }}">
-            <i class="ace-icon fa fa-trash-o "></i>
-            Trash
-         </a>
-      </div>
-      <div class="pull-right">
-         <form method="post" action="{{ route('admin.search') }}" id="form-search"
-               onsubmit="event.preventDefault()">
-            @csrf
-            <span><i>@lang('ext.search') : <b>@lang('models/products.fields.product_name')</b> @lang('ext.and') <b>@lang('models/products.fields.sku')</b></i></span>
-            <input type="hidden" value="products" name="search_kind">
-            <span class="input-icon">
-               <input type="text" placeholder="Search ..." class="nav-search-input"
-                      autocomplete="off" name="search"/>
-               <i class="ace-icon fa fa-search nav-search-icon"></i>
-               <button type="submit" class="btn btn-sm">
-                  <span class="fa fa-search"></span>
-               </button>
-            </span>
-         </form>
-      </div>
-   @endif
+  <div class="pull-right">
+     <form method="post" action="{{ route('admin.search') }}" id="form-search"
+           onsubmit="event.preventDefault()">
+        @csrf
+        <span><i>@lang('ext.search') : <b>@lang('models/products.fields.product_name')</b> @lang('ext.and') <b>@lang('models/products.fields.sku')</b></i></span>
+        <input type="hidden" value="products" name="search_kind">
+        <span class="input-icon">
+           <input type="text" placeholder="Search ..." class="nav-search-input"
+                  autocomplete="off" name="search"/>
+           <i class="ace-icon fa fa-search nav-search-icon"></i>
+           <button type="submit" class="btn btn-sm">
+              <span class="fa fa-search"></span>
+           </button>
+        </span>
+     </form>
+  </div>
    <div class="col-sm-12 col-lg-12 col-xs-12">
       <table id="simple-table" class="table table-bordered table-hover table-responsive">
          <thead>
@@ -128,43 +79,4 @@
           });
       </script>
    @endcan
-   <!-- TO SORT PRODUCTS -->
-   <script type="text/javascript">
-       $(document).ready(function () {
-           $("#sort_form").submit(function (e) {
-               e.preventDefault();
-               var form = $(this);
-               var form_data = new FormData(this);
-               $.ajaxSetup({
-                   headers: {
-                       'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
-                   }
-               });
-               $.ajax({
-                   url: "{{ route('product.index.sort') }}",
-                   method: "post",
-                   data: form_data,
-                   contentType: false,
-                   cache: false,
-                   processData: false,
-                   beforeSend: function () {
-                       $(".preview").show();
-                   },
-
-               })
-                   .done(function (data) {
-                       if (data.html == " ") {
-                           // $('.ajax-load').attr('src', '');
-                           $('#preview').hide();
-                           $('.table_body').html("No more records found");
-                           return;
-                       }
-                       $("#table_body").empty().append(data.html);
-                       $('.preview').hide();
-                   }).fail(function () {
-                   alert('error');
-               })
-           });
-       });
-   </script>
 @stop

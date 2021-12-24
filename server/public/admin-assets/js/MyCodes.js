@@ -28,7 +28,6 @@ function deleteAjax(url,cls,msg = '') {
             {
                 if ($results.success === true)
                 {
-                alert($results.message);
                 $(obj).closest("tr").remove(); //delete row
 
                 }
