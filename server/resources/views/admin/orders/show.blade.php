@@ -94,9 +94,9 @@
                      <tbody>
                      @forelse($order->detailsOrder as $key=> $d_order)
                         <tr>
-                           <td class="center">{{$key++}}</td>
+                           <td class="center">{{++$key}}</td>
                            <td class="center">
-                              <a class="click_me" href="{{ route('product.show',$d_order->product_id) }}">
+                              <a class="click_me" href="{{ route('product.edit',$d_order->product_id) }}">
                                  {{$d_order->products ? ($d_order->products->product_name) :'-'}}</a>
                            </td>
                            <td class="center">{{$d_order->product_price}}</td>

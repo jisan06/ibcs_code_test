@@ -44,7 +44,7 @@ class CheckoutRepository extends BaseRepository
 
             foreach ($input['items'] as $item){
                $order_details = new DetailsOrder();
-                $order_details->order_id = $order->id;
+                $order_details->order_id = $order->order_id;
                 $order_details->product_id  = $item['product'];
                 $order_details->product_price  = $item['price'];
                 $order_details->quantity  = $item['quantity'];
