@@ -55,6 +55,6 @@ class OrderRepository extends BaseRepository
     {
         $user = JWTAuth::parseToken()->authenticate();
         $orders = $this->model()::with('detailsOrder','detailsOrder.products')->where('user_id', $user->user_id)->get();
-        return response()->json($orders);
+        return $orders;
     }
 }

@@ -43,14 +43,21 @@ export default {
     }
     ,
     methods: {
-        logout() {
-            axios.defaults.headers.common['Authorization'] = ''
-            localStorage.removeItem('token')
-            localStorage.removeItem('username')
-            localStorage.removeItem('userid')
+      async logout() {
+          await axios
+              .post('api/logout')
+              .then(response => {
+                axios.defaults.headers.common['Authorization'] = ''
+                localStorage.removeItem('token')
+                localStorage.removeItem('username')
+                localStorage.removeItem('userid')
 
-            this.$store.commit('removeToken')
-            this.$router.push('/')
+                this.$store.commit('removeToken')
+                this.$router.push('/')
+              })
+              .catch(error => {
+
+              })
         },
         async getMyOrders() {
             this.$store.commit('setIsLoading', true)
@@ -58,7 +65,7 @@ export default {
             await axios
                 .post('api/orders')
                 .then(response => {
-                    this.orders = response.data
+                    this.orders = response.data.orders
                 })
                 .catch(error => {
 

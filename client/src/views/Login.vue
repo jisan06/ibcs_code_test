@@ -82,7 +82,7 @@ export default {
                 axios
                     .post("api/user/login", formData)
                     .then(response => {
-                        const token = response.data.access_token
+                        const token = response.data.token
 
                         this.$store.commit('setToken', token)
 

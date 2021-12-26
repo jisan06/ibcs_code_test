@@ -52,7 +52,7 @@ class CheckoutRepository extends BaseRepository
             }
 
             DB::commit();
-            return response()->json(['success' => 'ok']);
+            return true;
         }catch (\Exception $e){
             DB::rollBack();
             return $e->getMessage();

@@ -22,7 +22,10 @@ class orderController extends Controller
 
     public function customerOrderList(Request $request)
     {
-        return $this->order->customerOrderList($request);
+        $orders =  $this->order->customerOrderList($request);
+        return response()->json([
+            'orders' => $orders
+        ],200);
     }
 
 }

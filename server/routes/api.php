@@ -32,6 +32,7 @@ Route::group([
 ], function ($router) {
     Route::post('orders/checkout', 'checkOutController@store');
     Route::post('orders', 'orderController@customerOrderList');
+    Route::post('logout', 'LoginController@logout');
 
 });
 

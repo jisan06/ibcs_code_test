@@ -26,6 +26,9 @@ class checkOutController extends Controller
             'email' => 'email|required',
             'address' => 'string|required',
         ]);
-        return $this->checkout->checkout($request);
+        $this->checkout->checkout($request);
+        return response()->json([
+            'message' => 'Your order successfully placed'
+        ],200);
     }
 }

@@ -73,6 +73,8 @@
                                                     <a class="list-group-item list-group-item-action" href="#product_search">Product Search</a>
                                                     <a class="list-group-item list-group-item-action" href="#customer_registration">Customer Registration</a>
                                                     <a class="list-group-item list-group-item-action" href="#customer_login">Customer Login</a>
+                                                    <a class="list-group-item list-group-item-action" href="#order_checkout">Order Checkout</a>
+                                                    <a class="list-group-item list-group-item-action" href="#order_list">Order List</a>
                                                 </div>
                                             </div>
                                             <div class="col-md-8">
@@ -142,7 +144,7 @@
                                                                     <td style="text-align: left">
                                                                         <div class="float-start">
                                                                             - For buying product, checkout order send POST request here
-                                                                            <a href="#" class="text-decoration-none">api/orders/checkout</a>
+                                                                            <a href="#order_checkout" class="text-decoration-none">api/orders/checkout</a>
                                                                         </div>
                                                                     </td>
                                                                 </tr>
@@ -151,7 +153,7 @@
                                                                     <td style="text-align: left">
                                                                         <div class="float-start">
                                                                             - For showing logged in customer order list send POST request here
-                                                                            <a href="#" class="text-decoration-none">api/orders</a>
+                                                                            <a href="#order_list" class="text-decoration-none">api/orders</a>
                                                                         </div>
                                                                     </td>
                                                                 </tr>
@@ -475,6 +477,152 @@
                 "token": '232fgfgh#454654',
                 "token_type": 'bearer',
                 "expires_in": '1200',
+            }
+    </pre>
+                                                                </td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+
+
+                                                    <!--Section for order checkout-->
+                                                    <div class="my-auto">
+                                                        <table class="table table-bordered">
+                                                            <tbody>
+                                                            <tr class="bg-dark">
+                                                                <th colspan="6">
+                                                                    <h3 id="order_checkout" class="font-weight-semibold text-white">Order Checkout</h3>
+                                                                </th>
+                                                            </tr>
+                                                            </tbody>
+                                                            <tbody class="request_params">
+                                                            <tr>
+                                                                <th colspan="3">
+                                                                    <div class="text-center">
+                                                                        <h4>Request Parameters</h4>
+                                                                    </div>
+                                                                </th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th class="text-center">
+                                                                    PARAMETER NAME
+                                                                </th>
+                                                                <th class="text-center">
+                                                                   Description
+                                                                </th>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <span class="badge bg-info font-size-15 fw-bold">name</span>
+                                                                </td>
+                                                                <td class="text-start">
+
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <span class="badge bg-info font-size-15 fw-bold">phone</span>
+                                                                </td>
+                                                                <td class="text-start">
+
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <span class="badge bg-info font-size-15 fw-bold">email</span>
+                                                                </td>
+                                                                <td class="text-start">
+
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <span class="badge bg-info font-size-15 fw-bold">address</span>
+                                                                </td>
+                                                                <td class="text-start">
+
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="6">
+                                                                    <b>Url: </b> <span>api/orders/checkout"</span> <br>
+                                                                    <b>Method: </b> POST<br>
+                                                                </td>
+                                                            </tr>
+                                                            </tbody>
+                                                            <tbody class="returned_params">
+                                                            <tr>
+                                                                <th colspan="3">
+                                                                    <div>
+                                                                        <h5 class="text-success">Returned Response Example</h5>
+                                                                    </div>
+                                                                </th>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="2">
+                                                                    <pre class="text-start border bg-white font-size-14">
+            {
+                "message": 'Your Order Successfully Placed',
+            }
+    </pre>
+                                                                </td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+
+
+                                                    <!--Section for logged in customer order list-->
+                                                    <div class="my-auto">
+                                                        <table class="table table-bordered">
+                                                            <tbody>
+                                                            <tr class="bg-dark">
+                                                                <th colspan="6">
+                                                                    <h3 id="order_list" class="font-weight-semibold text-white">Logged in Customer Order List</h3>
+                                                                </th>
+                                                            </tr>
+                                                            </tbody>
+                                                            <tbody class="request_params">
+                                                            <tr>
+                                                                <td colspan="6">
+                                                                    <b>Url: </b> <span>api/orders"</span> <br>
+                                                                    <b>Method: </b> POST<br>
+                                                                </td>
+                                                            </tr>
+                                                            </tbody>
+                                                            <tbody class="returned_params">
+                                                            <tr>
+                                                                <th colspan="3">
+                                                                    <div>
+                                                                        <h5 class="text-success">Returned Response Example</h5>
+                                                                    </div>
+                                                                </th>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="2">
+                                                                    <pre class="text-start border bg-white font-size-14">
+            {
+                "orders":
+                        [
+                            {
+                                'order_id' : 1,
+                                'user_id' : 4,
+                                'order_status' : Pending,
+                                'total_price' : 4000,
+                                'details_order' :
+                                                [
+                                                    {
+                                                        'details_order' : 9,
+                                                        'order_id' : 4,
+                                                        'product_id' : 2,
+                                                        'product_price' : 1500,
+                                                        'quantity' : 2,
+                                                    }
+                                                ],
+                            }
+                        ]
+
             }
     </pre>
                                                                 </td>
