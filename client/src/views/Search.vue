@@ -43,7 +43,7 @@ export default {
             this.$store.commit('setIsLoading', true) // push to vuex
 
             await axios
-                  .post('/api/products/search/', {
+                  .post('/api/products/search', {
                       'search_key': this.query
                   })
                   .then( response => {

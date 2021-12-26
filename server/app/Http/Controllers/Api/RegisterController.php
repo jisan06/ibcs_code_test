@@ -25,12 +25,14 @@ class RegisterController extends Controller
         if(count($validator->errors()) > 0){
             return response()->json($validator->errors(), 422);
         }
-        return $user = User::create([
+        $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
 
-        return $user;
+        return response()->json([
+            'message' => 'Your registration complete'
+        ],200);
     }
 }

@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="bn" class="js-focus-visible" data-js-focus-visible=""><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Documentation</title>
+    <link rel="shortcut icon" href="http://elicense.viewdemo.xyz/assets/common/images/logo/logo-fsc-noc.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<style>
+
+</style>
+<style type="text/css">
+@font-face {
+  font-weight: 400;
+  font-style:  normal;
+  font-family: 'Circular-Loom';
+
+  src: url('https://cdn.loom.com/assets/fonts/circular/CircularXXWeb-Book-cd7d2bcec649b1243839a15d5eb8f0a3.woff2') format('woff2');
+}
+
+@font-face {
+  font-weight: 500;
+  font-style:  normal;
+  font-family: 'Circular-Loom';
+
+  src: url('https://cdn.loom.com/assets/fonts/circular/CircularXXWeb-Medium-d74eac43c78bd5852478998ce63dceb3.woff2') format('woff2');
+}
+
+@font-face {
+  font-weight: 700;
+  font-style:  normal;
+  font-family: 'Circular-Loom';
+
+  src: url('https://cdn.loom.com/assets/fonts/circular/CircularXXWeb-Bold-83b8ceaf77f49c7cffa44107561909e4.woff2') format('woff2');
+}
+
+@font-face {
+  font-weight: 900;
+  font-style:  normal;
+  font-family: 'Circular-Loom';
+
+  src: url('https://cdn.loom.com/assets/fonts/circular/CircularXXWeb-Black-bf067ecb8aa777ceb6df7d72226febca.woff2') format('woff2');
+}</style></head>
+    <body data-topbar="dark" cz-shortcut-listen="true">
+        <div id="ajax_error_alert" class="d-none">
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <i class="mdi mdi-block-helper me-2"></i>
+                <span id="ajax_error"></span>
+            </div>
+        </div>
+        <div>
+            <div class="container-fluid">
+                <div class="row g-0 container-row justify-content-center mt-5">
+
+                    <div class="col-xl-12 text-center">
+                        <div class="auth-full-page-content">
+                            <div class="w-100">
+
+                                <div class="d-flex flex-column h-100">
+                                    <div class="my-auto">
+                                        <div class="row justify-content-center">
+                                            <div class="col-md-2">
+                                                <div id="scrolling-docs" class="list-group pt-5 sticky-top">
+                                                    <div style="margin-top: -45px;" class="row mb-4">
+                                                        <div class="col-md-6">
+                                                            <a class="btn btn-outline-info">
+                                                                <i class="bx bx-power-off font-size-14"></i>
+                                                                Menu
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <a class="list-group-item list-group-item-action" href="#Instructions">Instructions</a>
+                                                    <a class="list-group-item list-group-item-action" href="#all_product">Get All Product</a>
+                                                    <a class="list-group-item list-group-item-action" href="#product_details">Product Details</a>
+                                                    <a class="list-group-item list-group-item-action" href="#product_search">Product Search</a>
+                                                    <a class="list-group-item list-group-item-action" href="#customer_registration">Customer Registration</a>
+                                                    <a class="list-group-item list-group-item-action" href="#customer_login">Customer Login</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div data-bs-spy="scroll" data-bs-target="#scrolling-docs" data-bs-offset="0" class="scrollspy-example" tabindex="0">
+                                                    <!--Section for all api instruction-->
+                                                    <div class="my-auto">
+                                                        <table class="table table-bordered">
+                                                            <tbody style="background-color: honeydew;">
+                                                                <tr class="bg-dark">
+                                                                    <td>
+                                                                        <h3 id="Instructions" class="font-weight-semibold text-white">Instructions</h3>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align: left">
+                                                                        <div class="float-start">
+                                                                            <span class="text-danger">**Note: </span> Send token with header. Authorization type must be Bearer
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align: left">
+                                                                        <div class="float-start">
+                                                                            - To get all product, send a
+                                                                            GET request here <a href="#all_product" class="text-decoration-none">api/products</a>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+
+                                                                <tr>
+                                                                    <td style="text-align: left">
+                                                                        <div class="float-start">
+                                                                            - For product details , send a GET request here
+                                                                            <a href="#product_details" class="text-decoration-none">api/products/{product_id}</a>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+
+                                                                <tr>
+                                                                    <td style="text-align: left">
+                                                                        <div class="float-start">
+                                                                            - For product search , send a POST request here
+                                                                            <a href="#product_search" class="text-decoration-none">api/products/search</a>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+
+                                                                <tr>
+                                                                    <td style="text-align: left">
+                                                                        <div class="float-start">
+                                                                            - For register a customer send a POST request here
+                                                                            <a href="#customer_registration" class="text-decoration-none">api/user/registration</a>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+
+                                                                <tr>
+                                                                    <td style="text-align: left">
+                                                                        <div class="float-start">
+                                                                            - For customer login send a POST request here
+                                                                            <a href="#customer_login" class="text-decoration-none">api/user/login</a>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+
+                                                                <tr>
+                                                                    <td style="text-align: left">
+                                                                        <div class="float-start">
+                                                                            - For buying product, checkout order send POST request here
+                                                                            <a href="#" class="text-decoration-none">api/orders/checkout</a>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+
+                                                                <tr>
+                                                                    <td style="text-align: left">
+                                                                        <div class="float-start">
+                                                                            - For showing logged in customer order list send POST request here
+                                                                            <a href="#" class="text-decoration-none">api/orders</a>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+
+                                                    <!--Section for all product show-->
+                                                    <div class="my-auto">
+                                                        <table class="table table-bordered">
+                                                            <tbody>
+                                                                <tr class="bg-dark">
+                                                                    <th colspan="6">
+                                                                        <h3 id="all_product" class="font-weight-semibold text-white">Get All Product</h3>
+                                                                    </th>
+                                                                </tr>
+                                                            </tbody>
+                                                            <tbody class="request_params">
+                                                                <tr>
+                                                                    <td colspan="6">
+                                                                        <b>Url: </b> <span>api/products</span> <br>
+                                                                        <b>Method: </b> GET<br>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                            <tbody class="returned_params">
+                                                            <tr>
+                                                                <th colspan="3">
+                                                                    <div>
+                                                                        <h5 class="text-success">Returned Response Example</h5>
+                                                                    </div>
+                                                                </th>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="2">
+                                                                    <pre class="text-start border bg-white font-size-14">
+            {
+                "products":
+                            [
+                               {
+                                    'product_id': 5,
+                                    'image': image path,
+                                    'product_name': Game box 09A,
+                                    'price': 400,
+                               },
+                            ]
+            }
+    </pre>
+                                                                </td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+
+
+                                                    <!--Section for product details-->
+                                                    <div class="my-auto">
+                                                        <table class="table table-bordered">
+                                                            <tbody>
+                                                            <tr class="bg-dark">
+                                                                <th colspan="6">
+                                                                    <h3 id="product_details" class="font-weight-semibold text-white">Product Details</h3>
+                                                                </th>
+                                                            </tr>
+                                                            </tbody>
+                                                            <tbody class="request_params">
+                                                            <tr>
+                                                                <td colspan="6">
+                                                                    <b>Url: </b> <span>api/products/{product_id}</span> <br>
+                                                                    <b>Method: </b> GET<br>
+                                                                </td>
+                                                            </tr>
+                                                            </tbody>
+                                                            <tbody class="returned_params">
+                                                            <tr>
+                                                                <th colspan="3">
+                                                                    <div>
+                                                                        <h5 class="text-success">Returned Response Example</h5>
+                                                                    </div>
+                                                                </th>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="2">
+                                                                    <pre class="text-start border bg-white font-size-14">
+            {
+                "product":
+                           {
+                                'product_id': 5,
+                                'image': image path,
+                                'product_name': Game box 09A,
+                                'price': 400,
+                           },
+            }
+    </pre>
+                                                                </td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+
+
+                                                    <!--Section for product search-->
+                                                    <div class="my-auto">
+                                                        <table class="table table-bordered">
+                                                            <tbody>
+                                                            <tr class="bg-dark">
+                                                                <th colspan="6">
+                                                                    <h3 id="product_search" class="font-weight-semibold text-white">Product Search</h3>
+                                                                </th>
+                                                            </tr>
+                                                            </tbody>
+                                                            <tbody class="request_params">
+                                                            <tr>
+                                                                <th colspan="3">
+                                                                    <div class="text-center">
+                                                                        <h4>Request Parameters</h4>
+                                                                    </div>
+                                                                </th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th class="text-center">
+                                                                    PARAMETER NAME
+                                                                </th>
+                                                                <th class="text-center">
+                                                                    DESCRIPTION
+                                                                </th>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <span class="badge bg-info font-size-15 fw-bold">search_key</span>
+                                                                </td>
+                                                                <td class="text-start">
+                                                                    Send request with parameter(search_key), this key will be search product list by product name
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="6">
+                                                                    <b>Url: </b> <span>api/products/search</span> <br>
+                                                                    <b>Method: </b> POST<br>
+                                                                </td>
+                                                            </tr>
+                                                            </tbody>
+                                                            <tbody class="returned_params">
+                                                            <tr>
+                                                                <th colspan="3">
+                                                                    <div>
+                                                                        <h5 class="text-success">Returned Response Example</h5>
+                                                                    </div>
+                                                                </th>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="2">
+                                                                    <pre class="text-start border bg-white font-size-14">
+            {
+                "products":
+                            [
+                               {
+                                    'product_id': 5,
+                                    'image': image path,
+                                    'product_name': Game box 09A,
+                                    'price': 400,
+                               },
+                            ]
+            }
+    </pre>
+                                                                </td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+
+
+                                                    <!--Section for customer registration-->
+                                                    <div class="my-auto">
+                                                        <table class="table table-bordered">
+                                                            <tbody>
+                                                            <tr class="bg-dark">
+                                                                <th colspan="6">
+                                                                    <h3 id="customer_registration" class="font-weight-semibold text-white">Customer Registration</h3>
+                                                                </th>
+                                                            </tr>
+                                                            </tbody>
+                                                            <tbody class="request_params">
+                                                            <tr>
+                                                                <th colspan="3">
+                                                                    <div class="text-center">
+                                                                        <h4>Request Parameters</h4>
+                                                                    </div>
+                                                                </th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th class="text-center">
+                                                                    PARAMETER NAME
+                                                                </th>
+                                                                <th class="text-center">
+                                                                   Description
+                                                                </th>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <span class="badge bg-info font-size-15 fw-bold">name</span>
+                                                                </td>
+                                                                <td class="text-start">
+
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <span class="badge bg-info font-size-15 fw-bold">email</span>
+                                                                </td>
+                                                                <td class="text-start">
+
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <span class="badge bg-info font-size-15 fw-bold">password</span>
+                                                                </td>
+                                                                <td class="text-start">
+
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <span class="badge bg-info font-size-15 fw-bold">password_confirmation</span>
+                                                                </td>
+                                                                <td class="text-start">
+
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="6">
+                                                                    <b>Url: </b> <span>api/user/registration"</span> <br>
+                                                                    <b>Method: </b> POST<br>
+                                                                </td>
+                                                            </tr>
+                                                            </tbody>
+                                                            <tbody class="returned_params">
+                                                            <tr>
+                                                                <th colspan="3">
+                                                                    <div>
+                                                                        <h5 class="text-success">Returned Response Example</h5>
+                                                                    </div>
+                                                                </th>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="2">
+                                                                    <pre class="text-start border bg-white font-size-14">
+            {
+                "message": 'Your registration complete'
+            }
+    </pre>
+                                                                </td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+
+
+                                                    <!--Section for customer login-->
+                                                    <div class="my-auto">
+                                                        <table class="table table-bordered">
+                                                            <tbody>
+                                                            <tr class="bg-dark">
+                                                                <th colspan="6">
+                                                                    <h3 id="customer_login" class="font-weight-semibold text-white">Customer Login</h3>
+                                                                </th>
+                                                            </tr>
+                                                            </tbody>
+                                                            <tbody class="request_params">
+                                                            <tr>
+                                                                <th colspan="3">
+                                                                    <div class="text-center">
+                                                                        <h4>Request Parameters</h4>
+                                                                    </div>
+                                                                </th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th class="text-center">
+                                                                    PARAMETER NAME
+                                                                </th>
+                                                                <th class="text-center">
+                                                                   Description
+                                                                </th>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <span class="badge bg-info font-size-15 fw-bold">email</span>
+                                                                </td>
+                                                                <td class="text-start">
+
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <span class="badge bg-info font-size-15 fw-bold">password</span>
+                                                                </td>
+                                                                <td class="text-start">
+
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="6">
+                                                                    <b>Url: </b> <span>api/user/login"</span> <br>
+                                                                    <b>Method: </b> POST<br>
+                                                                </td>
+                                                            </tr>
+                                                            </tbody>
+                                                            <tbody class="returned_params">
+                                                            <tr>
+                                                                <th colspan="3">
+                                                                    <div>
+                                                                        <h5 class="text-success">Returned Response Example</h5>
+                                                                    </div>
+                                                                </th>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="2">
+                                                                    <pre class="text-start border bg-white font-size-14">
+            {
+                "token": '232fgfgh#454654',
+                "token_type": 'bearer',
+                "expires_in": '1200',
+            }
+    </pre>
+                                                                </td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col -->
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container-fluid -->
+        </div>
+    </body>
+</html>
